@@ -13,10 +13,19 @@ const Header = () => {
         <a>Jobs</a>
       </li> */}
       <li>
-        <NavLink>Home</NavLink>
+        <NavLink to="/">Home</NavLink>
       </li>
       <li>
-        <NavLink>Jobs</NavLink>
+        <NavLink to="/jobs">Jobs</NavLink>
+      </li>
+      <li>
+        <NavLink to="/applied">Applied Jobs</NavLink>
+      </li>
+      <li>
+        <NavLink to="/blogs">Blogs</NavLink>
+      </li>
+      <li>
+        <NavLink to="/statistics">Statistics</NavLink>
       </li>
     </>
   );
