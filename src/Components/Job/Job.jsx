@@ -1,4 +1,7 @@
 import React from "react";
+import { IoLocationOutline } from "react-icons/io5";
+import { BsCurrencyDollar } from "react-icons/bs";
+//47-5 Add Icons And Handle Show All Jobs
 
 const Job = ({ job }) => {
   //   console.log(job);
@@ -19,7 +22,7 @@ const Job = ({ job }) => {
   } = job;
   return (
     <div>
-      <div className="card w-auto h-[400px] bg-base-100 shadow-xl scroll-my-12">
+      <div className="card w-auto bg-base-100 shadow-xl scroll-my-12 flex-grow-0">
         <figure>
           <img src={logo} alt="Shoes" />
         </figure>
@@ -33,6 +36,19 @@ const Job = ({ job }) => {
             <button className="px-5 py-2 border rounded border-3 font-extrabold border-cyan-600 text-blue-400">
               {remote_or_onsite}
             </button>
+          </div>
+          <div className="flex">
+            <div className="mr-5">
+              <h2 className="flex items-center text-2xl">
+                <IoLocationOutline /> {location}
+              </h2>
+            </div>
+            <div>
+              <h2 className="flex items-center text-2xl">
+                {" "}
+                <BsCurrencyDollar /> {salary}
+              </h2>
+            </div>
           </div>
           <div className="card-actions ">
             <button className="btn btn-primary">Show Details</button>

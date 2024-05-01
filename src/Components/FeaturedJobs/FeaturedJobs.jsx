@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import Job from "../Job/Job";
 //47-3 Load Jobs Data For The Page
+//47-5 Add Icons And Handle Show All Jobs
 
 const FeaturedJobs = () => {
   const [jobs, setJobs] = useState([]);
+  const [dataLength, setDataLength] = useState(4);
   useEffect(() => {
     fetch("jobsss.json")
       .then((res) => res.json())
@@ -21,9 +23,21 @@ const FeaturedJobs = () => {
         </p>
       </div>
       <div className="grid grid-cols-2 gap-5">
-        {jobs.map((job) => (
+        {jobs.slice(0, dataLength).map((job) => (
           <Job key={job.id} job={job}></Job>
         ))}
+      </div>
+      <div
+        className={dataLength == jobs.length ? "hidden" : "text-center py-5"}
+      >
+        <button
+          onClick={() => {
+            setDataLength(jobs.length);
+          }}
+          className="btn btn-primary mx-auto items-center justify-center"
+        >
+          Show All Data
+        </button>
       </div>
     </div>
   );
