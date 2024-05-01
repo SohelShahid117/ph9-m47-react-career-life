@@ -2,11 +2,43 @@ import React from "react";
 
 const Job = ({ job }) => {
   //   console.log(job);
-  const { id, logo, job_title, company_name, location } = job;
+  const {
+    id,
+    logo,
+    job_title,
+    company_name,
+    location,
+    job_type,
+    salary,
+    job_description,
+    job_responsibility,
+    educational_requirements,
+    experiences,
+    contact_information,
+    remote_or_onsite,
+  } = job;
   return (
     <div>
-      <img src={logo}></img>
-      <p>hello</p>
+      <div className="card w-auto h-[400px] bg-base-100 shadow-xl scroll-my-12">
+        <figure>
+          <img src={logo} alt="Shoes" />
+        </figure>
+        <div className="card-body">
+          <h2 className="card-title">{job_title}</h2>
+          <p>{job_description}</p>
+          <div className="gap-5">
+            <button className="px-5 py-2 border rounded border-3 font-extrabold border-cyan-600 mr-4 text-blue-400">
+              {job_type}
+            </button>
+            <button className="px-5 py-2 border rounded border-3 font-extrabold border-cyan-600 text-blue-400">
+              {remote_or_onsite}
+            </button>
+          </div>
+          <div className="card-actions ">
+            <button className="btn btn-primary">Show Details</button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

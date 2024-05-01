@@ -20,7 +20,7 @@ const FeaturedJobs = () => {
           between 30-60m if you're following along.
         </p>
       </div>
-      <div>
+      <div className="grid grid-cols-2 gap-5">
         {jobs.map((job) => (
           <Job key={job.id} job={job}></Job>
         ))}

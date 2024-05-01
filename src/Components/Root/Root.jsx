@@ -10,8 +10,10 @@ const Root = () => {
       {/* <outlet></outlet> */}
       {/* <Outlettlet /> */}
 
-      <Header></Header>
-      <Outlet></Outlet>
+      <div className="max-w-[80%] mx-auto">
+        <Header></Header>
+        <Outlet></Outlet>
+      </div>
       <Footer></Footer>
     </div>
   );
