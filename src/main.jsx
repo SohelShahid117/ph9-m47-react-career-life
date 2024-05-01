@@ -11,6 +11,8 @@ import Home from "./Components/Home/Home";
 import Root from "./Components/Root/Root.jsx";
 import Applied from "./Components/Applied/Applied.jsx";
 import ErrorPage from "./Components/ErrorPage/ErrorPage.jsx";
+import JobDetails from "./Components/JobDetails/JobDetails.jsx";
+// import loader from from "react-router-dom";
 
 const router = createBrowserRouter([
   {
@@ -39,6 +41,12 @@ const router = createBrowserRouter([
       {
         path: "/statistics",
         element: <></>,
+      },
+      {
+        path: "/job/:id",
+        element: <JobDetails></JobDetails>,
+        // loader: fetch("jobsss.json"),
+        loader: () => fetch("jobsss.json"),
       },
     ],
   },

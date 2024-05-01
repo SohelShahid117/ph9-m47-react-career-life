@@ -1,6 +1,7 @@
 import React from "react";
 import { IoLocationOutline } from "react-icons/io5";
 import { BsCurrencyDollar } from "react-icons/bs";
+import { NavLink } from "react-router-dom";
 //47-5 Add Icons And Handle Show All Jobs
 
 const Job = ({ job }) => {
@@ -51,7 +52,13 @@ const Job = ({ job }) => {
             </div>
           </div>
           <div className="card-actions ">
-            <button className="btn btn-primary">Show Details</button>
+            {/* <Link>
+              <button className="btn btn-primary">Show Job Details</button>
+            </Link> */}
+            <NavLink to={`/job/${id}`}>
+              <button className="btn btn-primary">Show Job Details</button>
+            </NavLink>
+            {/* <button className="btn btn-primary">Show Job Details</button> */}
           </div>
         </div>
       </div>
