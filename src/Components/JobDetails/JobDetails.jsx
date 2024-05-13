@@ -4,6 +4,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 // import LocalStorage from "../../Utility/LocalStorage";
 import { saveJobApplication } from "../../Utility/LocalStorage";
+import { Helmet } from "react-helmet-async";
 //47-6 Load Job Details Page And Display
 
 const JobDetails = () => {
@@ -40,6 +41,9 @@ const JobDetails = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Career Hub | Job : {id}</title>
+      </Helmet>
       {/* <h2>Job details of : {id}</h2>
       <p>{job.job_title}</p>
       <p>{job.educational_requirements}</p>

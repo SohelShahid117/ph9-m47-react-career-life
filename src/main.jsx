@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
+// import App from "./App.jsx";
 import "./index.css";
 //47-1 Project Setup With React Router, Tailwind And Daisy UI
 //47-2 (Recap) Set Nested Route And Navbar For CareerHub
@@ -12,6 +12,7 @@ import Root from "./Components/Root/Root.jsx";
 import Applied from "./Components/Applied/Applied.jsx";
 import ErrorPage from "./Components/ErrorPage/ErrorPage.jsx";
 import JobDetails from "./Components/JobDetails/JobDetails.jsx";
+import { HelmetProvider } from "react-helmet-async";
 // import loader from from "react-router-dom";
 
 const router = createBrowserRouter([
@@ -56,7 +57,9 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     {/* <App /> */}
-    <RouterProvider router={router} />
+    <HelmetProvider>
+      <RouterProvider router={router} />
+    </HelmetProvider>
   </React.StrictMode>
 );
 

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { getStoredJobApplication } from "../../Utility/LocalStorage";
+import { Helmet } from "react-helmet-async";
 //47-8 Display Applied Jobs From Stored Ids
 //47-9 Implement Job Filter And Deploy To Netlify And Surge
 
@@ -35,6 +36,9 @@ const Applied = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Career Hub | Applied Jobs</title>
+      </Helmet>
       {/* <h2>Jobs I applied : {appliedJobs.length} </h2> */}
       <p>jobs applied are : {appliedJobs.length}</p>
       <div className="dropdown">
@@ -60,7 +64,6 @@ const Applied = () => {
         {appliedJobs.map((jb) => (
           <li>
             <span>{jb.job_title}</span>
-            <p>hi</p>
           </li>
         ))}
       </ul>
