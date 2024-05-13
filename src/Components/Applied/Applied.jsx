@@ -60,6 +60,7 @@ const Applied = () => {
         {appliedJobs.map((jb) => (
           <li>
             <span>{jb.job_title}</span>
+            <p>hi</p>
           </li>
         ))}
       </ul>
